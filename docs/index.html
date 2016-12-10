@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+	var userAgent = window.navigator.userAgent.toLowerCase(),
+		safari = /safari/.test( userAgent ),
+		ios = /iphone|ipod|ipad/.test( userAgent ),
+		android = /android/.test( userAgent );
+
+	if( ios ) {
+		if ( safari ) {
+			// ios browser
+			document.write('this is ios browser.');
+		} else if ( !safari ) {
+			// ios webview
+			document.write('this is ios webview.');
+		}
+	} else if(android){
+		if(/AppName\/[0-9\.]+$/.test(navigator.userAgent)){
+			// android webview
+			document.write('this is android webview.');
+		}else{
+			// android browser
+			document.write('this is android browser.');
+		}
+	}else{
+		//not ios and android
+		document.write('this is not ios and android');
+	}
+</script>
+
+</body>
+</html>
